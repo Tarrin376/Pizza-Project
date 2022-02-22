@@ -1,0 +1,35 @@
+﻿<Window x:Class="PizzaProgram2.SuccessfullOrder"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PizzaProgram2"
+        mc:Ignorable="d"
+        Title="SuccessfullOrder" Height="600" Width="275" ResizeMode="NoResize" Background="#1b1a1a">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <MediaElement x:Name="image" Source="https://thumbs.gfycat.com/PlainHonestAzurevase-size_restricted.gif" Width="300" Grid.ColumnSpan="4"/>
+        <TextBlock x:Name="text" Text="Your order has been sent to the chef!" Width="200"  Foreground="White" FontSize="17" Grid.ColumnSpan="3" Margin="0, 135, 0, 0" TextWrapping="Wrap"
+                   TextAlignment="Center"/>
+        <Label x:Name="orderNum" Grid.Row="1" Grid.ColumnSpan="3" Margin="35, 18, 0, 0" Foreground="White" FontSize="14"/>
+        <Line Stroke="Gray" Grid.Row="1" StrokeThickness="1" X1="275" Grid.ColumnSpan="4" Margin="0, 75, 0, 0"/>
+        <Line Stroke="Gray" Grid.Row="1" StrokeThickness="1" X1="275" Grid.ColumnSpan="4" Margin="0, 65, 0, 0"/>
+        <Label x:Name="delivery" Content="Delivery included - " Grid.Row="1" Grid.ColumnSpan="3" Margin="35, 95, 0, 0" Foreground="White" FontSize="14"/>
+        <Label x:Name="address" Content="Address - " Grid.Row="1" Grid.ColumnSpan="3" Margin="35, 120, 0, 0" Foreground="White" FontSize="14"/>
+        <Label x:Name="town" Content="City/town - " Grid.Row="1" Grid.ColumnSpan="3" Margin="35, 145, 0, 0" Foreground="White" FontSize="14"/>
+        <Label x:Name="postcode" Content="Postcode - " Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="3" Margin="35, 170, 0, 0" Foreground="White" FontSize="14"/>
+        <Label x:Name="paymentMethod" Content="Payment method - " Grid.Row="2" Grid.ColumnSpan="3" Margin="35, 5, 0, 0" Foreground="White" FontSize="14"/>
+        <Line Stroke="Gray" Grid.Row="2" StrokeThickness="1" X1="275" Grid.ColumnSpan="4" Margin="0, 55, 0, 0"/>
+        <Line Stroke="Gray" Grid.Row="2" StrokeThickness="1" X1="275" Grid.ColumnSpan="4" Margin="0, 65, 0, 0"/>
+        <Label x:Name="totalCost" Content="Total cost (Inc. VAT) - " Grid.Row="2" Grid.ColumnSpan="3" Margin="35, 90, 0, 0" Foreground="White" FontSize="14"/>
+    </Grid>
+</Window>

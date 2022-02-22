@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "18IYycA9MpsumssB2LatC07+RMZFl9foj9+2vBuRnXQB7bJNshWh/HHzlxK82SzRbiBlskCRvrX6QHD/UQIiig==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Tarrin\\source\\repos\\PizzaProgram2\\PizzaProgram2\\PizzaProgram2.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Tarrin\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.12\\microsoft.netcore.app.host.win-x64.5.0.12.nupkg.sha512"
+  ],
+  "logs": []
+}

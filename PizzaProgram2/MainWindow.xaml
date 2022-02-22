@@ -1,0 +1,221 @@
+﻿<Window x:Class="PizzaProgram2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PizzaProgram2"
+        mc:Ignorable="d"
+        Title="Your Way Pizza" Height="907" Width="1300" ResizeMode="NoResize" Background="#1b1a1a" Closed="WindowClosed">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Line Stroke="Gray" StrokeThickness="1" X1="1300" Grid.ColumnSpan="4" Margin="0, 80, 0, 0"/>
+        <Image Source="C:\Users\Tarrin\Pictures\Camera Roll\fast-food.png" Width="70" Margin="-240, -140, 0, 0"/>
+        <Label Content="Your Way Pizza" FontSize="30" Margin="80, 14, 0, 0" Grid.ColumnSpan="2" Foreground="#22dd97"
+               FontWeight="Bold"/>
+        <Label Content="Welcome to Your Way Pizza!" FontSize="30" Grid.Row="0" Grid.ColumnSpan="2"
+               Grid.RowSpan="2" Margin="70, 110, 0, 0" Foreground="White"/>
+
+        <Ellipse x:Name="pizzaProcess" Canvas.Top="50" Canvas.Left="50" Fill="#4b4c4c" Height="110" Width="130" StrokeThickness="2" 
+               Stroke="#22dd97" Grid.Row="0" Margin="0, 60, 40, 0" Grid.RowSpan="2"/>
+        <Label Content="Pizzas" Grid.Row="1" Margin="112, 10, 0, 0" FontSize="20" Foreground="White"/>
+        <Line x:Name="firstLine" Stroke="Black" StrokeThickness="1" Grid.RowSpan="2" X1="220" Grid.ColumnSpan="2" Margin="206, 250, 0, 0"/>
+        <Ellipse x:Name="toppingProcess" Canvas.Top="50" Canvas.Left="50" Fill="#4b4c4c" Height="110" Width="130" StrokeThickness="2" 
+               Stroke="#22dd97" Grid.Row="0" Grid.Column="1" Margin="0, 60, 0, 0" Grid.RowSpan="2"/>
+        <Label Content="Toppings" Grid.Row="1" Grid.Column="1" Margin="115, 10, 0, 0" FontSize="20" Foreground="White"/>
+        <Line x:Name="secondLine" Stroke="Black" StrokeThickness="1" Grid.Column="1" Grid.RowSpan="2" X1="225" Grid.ColumnSpan="2" 
+              Margin="225, 250, 0, 0"/>
+        <Ellipse x:Name="sideProcess" Canvas.Top="50" Canvas.Left="50" Fill="#4b4c4c" Height="110" Width="130" StrokeThickness="2" 
+               Stroke="#22dd97" Grid.Row="0" Grid.Column="2" Margin="70, 60, 40, 0" Grid.RowSpan="2"/>
+        <Label Content="Sides" Grid.Row="1" Grid.Column="2" Margin="150, 10, 0, 0" FontSize="20" Foreground="White"
+               Grid.ColumnSpan="2"/>
+
+        <Rectangle Grid.Column="3" Grid.RowSpan="4" Height="660" Width="300" Fill="#242424" Margin="0, 185, 0, 0"/>
+        <Label x:Name="pizzas" Content="Pizzas: " Grid.Column="3" Grid.Row="2" FontSize="20" Foreground="White" Margin="20, -170, 0, 0"/>
+        <ListBox x:Name="pizzaOrder" HorizontalAlignment="Left" VerticalAlignment="Top" Width="276" Height="110" Background="#242424"
+                 Grid.Row="1" Grid.Column="3" Grid.RowSpan="2" Margin="25, 87, 0, 0" Foreground="White" FontSize="15">
+        </ListBox>
+        <Label x:Name="toppings" Content="Extra toppings: " Grid.Column="3" Grid.Row="2" FontSize="20" Foreground="White" Margin="20, -23, 0, 0"/>
+        <ListBox x:Name="toppingOrder" HorizontalAlignment="Left" VerticalAlignment="Top" Width="276" Height="110" Background="#242424"
+                 Grid.Row="2" Grid.Column="3" Grid.RowSpan="2" Margin="25, 15, 0, 0" Foreground="White" FontSize="15">
+        </ListBox>
+        <Label x:Name="sides" Content="Sides: " Grid.Column="3" Grid.Row="3" FontSize="20" Foreground="White" Margin="20, -95, 0, 0"/>
+        <ListBox x:Name="sideOrder" HorizontalAlignment="Left" VerticalAlignment="Top" Width="276" Height="90" Background="#242424"
+                 Grid.Row="2" Grid.Column="3" Grid.RowSpan="2" Margin="25, 162, 0, 0" Foreground="White" FontSize="15">
+        </ListBox>
+
+        <Label Content="YOUR ORDER" Grid.Column="3" Grid.Row="1" FontSize="25" Foreground="White" Margin="80, -5, 70, 170"/>
+        <Line Stroke="Gray" StrokeThickness="1" X1="300" Grid.Column="3" Grid.Row="1" Margin="11, 50, 0, 0"/>
+        <Line Stroke="Gray" StrokeThickness="1" X1="300" Grid.Column="3" Grid.Row="3" Margin="11, 45, 0, 0"/>
+        <Label Content="Total: " Grid.Column="3" Grid.Row="3" FontSize="20" Foreground="White" Margin="20, 75, 0, 0"/>
+        <Label x:Name="total" Content="£0" Grid.Column="3" Grid.Row="3" FontSize="20" Foreground="White" Margin="75, 75, 0, 0"/>
+        <Label Content="Delivery cost: " Grid.Column="3" Grid.Row="3" FontSize="15" Foreground="White" Margin="20, 50, 0, 0"/>
+        <Label x:Name="deliver" Content="£0" Grid.Column="3" Grid.Row="3" FontSize="15" Foreground="White" Margin="115, 50, 0, 0"/>
+        <Button x:Name="checkoutButton" IsEnabled="False" Content="CHECKOUT" Grid.Column="3" Grid.Row="3" FontSize="21"
+                Margin="0, 80, 0, 0" Width="250" Height="70" Grid.RowSpan="2" BorderBrush="Black"
+                BorderThickness="2" Background="#22dd97" Foreground="White" FontWeight="SemiBold" Click="GoToCheckout">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <Label x:Name="options" Content="Pizza options:" Grid.Row="1" FontSize="24" Margin="70, 110, 0, 0" Foreground="White"/>
+        <Image x:Name="image1" Width="225" Grid.Row="1" Grid.RowSpan="2" Margin="75, 60, 0, 0"/>
+        <Label x:Name="title1" Content="Pepperoni Pizza" Grid.Row="2" FontSize="18" Margin="130, 105, 0, 0" Foreground="White" />
+        <Button x:Name="button1" Content="ADD" Grid.Row="2" FontSize="18" Width="80" Height="40" Margin="240, 105, 0, 0"
+                BorderBrush="#22dd97" BorderThickness="2" Background="#4b4c4c" Foreground="White" Click="AddToCart">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <ComboBox x:Name="comboBox1" Width="150" Height="37" Grid.Row="2" Margin="-20, 105, 0, 0" FontSize="16" Text="Choose size:" IsEditable="True">
+        </ComboBox>
+        <Image x:Name="image2" Width="225" Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" Margin="45, 60, 0, 0"/>
+        <Label x:Name="title2" Content="Margherita Pizza" Grid.Row="2" Grid.Column="1" FontSize="18" Margin="115, 105, 0, 0" Foreground="White" />
+        <Button x:Name="button2" Content="ADD" Grid.Row="2" Grid.Column="1" FontSize="18" Width="80" Height="40" Margin="210, 105, 0, 0"
+                BorderBrush="#22dd97" BorderThickness="2" Background="#4b4c4c" Foreground="White" Click="AddToCart">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <ComboBox x:Name="comboBox2" Width="150" Height="37" Grid.Row="2" Margin="-50, 105, 0, 0" Grid.Column="1" FontSize="16"
+                  Text="Choose size:" IsEditable="True">
+        </ComboBox>
+        <Image x:Name="image3" Width="225" Grid.Row="1" Grid.Column="2" Grid.RowSpan="2" Margin="30, 60, 0, 0"/>
+        <Label x:Name="title3" Content="Chicken BBQ Pizza" Grid.Row="2" Grid.Column="2" FontSize="18" Margin="98, 105, 0, 0" Foreground="White" />
+        <Button x:Name="button3" Content="ADD" Grid.Row="2" Grid.Column="2" FontSize="18" Width="80" Height="40" Margin="200, 105, 0, 0"
+                BorderBrush="#22dd97" BorderThickness="2" Background="#4b4c4c" Foreground="White" Click="AddToCart">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <ComboBox x:Name="comboBox3" Width="150" Height="37" Grid.Row="2" Margin="-60, 105, 0, 0" Grid.Column="2" FontSize="16"
+                  Text="Choose size:" IsEditable="True">
+        </ComboBox>
+        <Image x:Name="image4" Width="225" Grid.Row="2" Grid.RowSpan="2" Margin="75, 110, 0, 0"/>
+        <Label x:Name="title4" Content="Cheeseburger Pizza" Grid.Row="3" FontSize="18" Margin="116, 130, 0, 0" Foreground="White" />
+        <Button x:Name="button4" Content="ADD" Grid.Row="3" FontSize="18" Width="80" Height="40" Margin="240, 160, 0, 0"
+                BorderBrush="#22dd97" BorderThickness="2" Background="#4b4c4c" Foreground="White" Click="AddToCart">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <ComboBox x:Name="comboBox4" Width="150" Height="37" Grid.Row="3" Margin="-20, 160, 0, 0" Grid.Column="0" FontSize="16"
+                  Text="Choose size:" IsEditable="True">
+        </ComboBox>
+        <Image x:Name="image5" Width="225" Grid.Row="2" Grid.Column="1" Grid.RowSpan="2" Margin="45, 110, 0, 0"/>
+        <Label x:Name="title5" Content="Meat feast Pizza" Grid.Row="3" Grid.Column="1" FontSize="18" Margin="115, 130, 0, 0" Foreground="White" />
+        <Button x:Name="button5" Content="ADD" Grid.Row="3" Grid.Column="1" FontSize="18" Width="80" Height="40" Margin="210, 160, 0, 0"
+                BorderBrush="#22dd97" BorderThickness="2" Background="#4b4c4c" Foreground="White" Click="AddToCart">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <ComboBox x:Name="comboBox5" Width="150" Height="37" Grid.Row="3" Margin="-50, 160, 0, 0" Grid.Column="1" FontSize="16"
+                  Text="Choose size:" IsEditable="True">
+        </ComboBox>
+        <Image x:Name="image6" Width="225" Grid.Row="2" Grid.Column="2" Grid.RowSpan="2" Margin="30, 110, 0, 0"/>
+        <Label x:Name="title6" Content="Vegetable Pizza" Grid.Row="3" Grid.Column="2" FontSize="18" Margin="110, 130, 0, 0" Foreground="White" />
+        <Button x:Name="button6" Content="ADD" Grid.Row="3" Grid.Column="2" FontSize="18" Width="80" Height="40" Margin="195, 160, 0, 0"
+                BorderBrush="#22dd97" BorderThickness="2" Background="#4b4c4c" Foreground="White" Click="AddToCart">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <ComboBox x:Name="comboBox6" Width="150" Height="37" Grid.Row="3" Margin="-65, 160, 0, 0" Grid.Column="2" FontSize="16"
+                  Text="Choose size:" IsEditable="True">
+        </ComboBox>
+
+        <Button Content="Back" Width="120" Height="50" Grid.Row="1" Grid.Column="2" Margin="-100, 40, 0, 0"
+                BorderBrush="#22dd97" Background="#4b4c4c" Foreground="White" FontSize="20" BorderThickness="2"
+                Click="GoBack">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button Content="Next" Width="120" Height="50" Grid.Row="1" Grid.Column="2" Margin="160, 40, 0, 0"
+                BorderBrush="#22dd97" Background="#4b4c4c" Foreground="White" FontSize="20" 
+                BorderThickness="2" Click="GoFoward">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="delivery" Content="Delivery" Width="120" Height="50" Grid.Row="0" Grid.Column="3" Margin="-130, 110, 0, 0"
+                BorderBrush="#22dd97" Background="#4b4c4c" Foreground="White" FontSize="20" 
+                BorderThickness="2" Click="ChooseDelivery">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="collection" Content="Collection" Width="120" Height="50" Grid.Row="0" Grid.Column="3" Margin="130, 110, 0, 0"
+                BorderBrush="Black" Background="#22dd97" Foreground="White" FontSize="20" 
+                BorderThickness="2" Click="ChooseCollection">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <Grid Width="250" Height="189" Grid.Row="1" Grid.Column="0" Margin="75, 83, 0, 0" Grid.RowSpan="2">
+            <Grid.Background>
+                <SolidColorBrush Color="Black" Opacity="0.1"/>
+            </Grid.Background>
+        </Grid>
+        <Grid Width="250" Height="189" Grid.Row="1" Grid.Column="1" Margin="45, 83, 0, 0" Grid.RowSpan="2">
+            <Grid.Background>
+                <SolidColorBrush Color="Black" Opacity="0.1"/>
+            </Grid.Background>
+        </Grid>
+        <Grid Width="250" Height="187" Grid.Row="1" Grid.Column="2" Margin="30, 85, 0, 0" Grid.RowSpan="2">
+            <Grid.Background>
+                <SolidColorBrush Color="Black" Opacity="0.1"/>
+            </Grid.Background>
+        </Grid>
+        <Grid Width="250" Height="187" Grid.Row="2" Grid.Column="0" Margin="75, 134, 0, 0" Grid.RowSpan="2">
+            <Grid.Background>
+                <SolidColorBrush Color="Black" Opacity="0.1"/>
+            </Grid.Background>
+        </Grid>
+        <Grid Width="250" Height="187" Grid.Row="2" Grid.Column="1" Margin="45, 134, 0, 0" Grid.RowSpan="2">
+            <Grid.Background>
+                <SolidColorBrush Color="Black" Opacity="0.1"/>
+            </Grid.Background>
+        </Grid>
+        <Grid Width="250" Height="187" Grid.Row="2" Grid.Column="2" Margin="30, 134, 0, 0" Grid.RowSpan="2">
+            <Grid.Background>
+                <SolidColorBrush Color="Black" Opacity="0.1"/>
+            </Grid.Background>
+        </Grid>
+    </Grid>
+</Window>
